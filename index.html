@@ -164,7 +164,7 @@ function exportData(){ const blob=new Blob([JSON.stringify({categories,habits,st
 document.getElementById("importFile").addEventListener("change",e=>{ const file=e.target.files[0]; const reader=new FileReader(); reader.onload=()=>{ const obj=JSON.parse(reader.result); categories=obj.categories||[]; habits=obj.habits||[]; stages=obj.stages||["없음"]; data=obj.data||{}; recurrenceList=obj.recurrenceList||[]; render(); }; reader.readAsText(file); });
 
 /* =================== GitHub Sync =================== */
-const GITHUB_INFO = { user:"YOUR_GITHUB_USERNAME", repo:"YOUR_PRIVATE_REPO", branch:"main", path:"habit_sync.json" };
+const GITHUB_INFO = { user:"apor76-cmyk", repo:"scheduledata", branch:"main", path:"habit_sync.json" };
 
 function getToken(){
   let token = localStorage.getItem("GH_TOKEN");
